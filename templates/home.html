@@ -1,3 +1,52 @@
-<h1>
-Hello World!    
-</h1>
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+  
+</head>
+
+<body>
+  <div class="login">
+    <h1>California House Price Prediction</h1>
+
+    <form action="{{ url_for('predict') }}" method="post">
+      <label for="MedInc">MedInc</label>
+      <input type="text" name="MedInc" placeholder="5.3886" required="required" /><br>
+
+      <label for="HouseAge">HouseAge</label>
+      <input type="text" name="HouseAge" placeholder="6.0" required="required" /><br>
+
+      <label for="AveRooms">AveRooms</label>
+      <input type="text" name="AveRooms" placeholder="5.2547169811" required="required" /><br>
+
+      <label for="AveBedrms">AveBedrms</label>
+      <input type="text" name="AveBedrms" placeholder="7.1622641509" required="required" /><br>
+
+      <label for="Population">Population</label>
+      <input type="text" name="Population" placeholder="100.0" required="required" /><br>
+
+      <label for="AveOccup">AveOccup</label>
+      <input type="text" name="AveOccup" placeholder="2.6169811321" required="required" /><br>
+
+      <label for="Latitude">Latitude</label>
+      <input type="text" name="Latitude" placeholder="39.37" required="required" /><br>
+
+      <label for="Longitude">Longitude</label>
+      <input type="text" name="Longitude" placeholder="-121.24" required="required" /><br>
+
+      <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction_text %}
+      <p>{{ prediction_text }}</p>
+    {% endif %}
+  </div>
+</body>
+</html>
